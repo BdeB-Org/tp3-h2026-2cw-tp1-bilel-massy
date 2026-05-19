@@ -38,3 +38,20 @@ async function create(endpoint, objetData) {
         return false;
     }
 }
+
+async function update(endpoint, id, objetData) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}/${id}`, {
+            method: 'PUT',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objetData)
+        });
+        return response.ok || response.status === 200;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
+
