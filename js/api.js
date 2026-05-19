@@ -55,3 +55,14 @@ async function update(endpoint, id, objetData) {
     }
 }
 
+async function remove(endpoint, id) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}/${id}`, {
+            method: 'DELETE'
+        });
+        return response.ok || response.status === 200 || response.status === 204;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
