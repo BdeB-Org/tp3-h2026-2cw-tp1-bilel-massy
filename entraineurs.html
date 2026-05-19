@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Entraîneurs - Gym</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h1 class="mb-4 text-center text-success">Gestion des Entraîneurs</h1>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm p-4">
+                    <h3 class="h5 mb-3 text-secondary">Ajouter un Entraîneur</h3>
+                    <form id="form-ajouter-entraineur">
+                        <div class="mb-3">
+                            <label class="form-label">ID Entraîneur (Unique)</label>
+                            <input type="number" id="entraineur-id" class="form-control" placeholder="Ex: 3" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nom Complet</label>
+                            <input type="text" id="entraineur-nom" class="form-control" placeholder="Coach Marc" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Spécialité</label>
+                            <input type="text" id="entraineur-specialite" class="form-control" placeholder="Ex: MMA, Boxe, BJJ" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Jours Disponibles</label>
+                            <input type="text" id="entraineur-jours" class="form-control" placeholder="Lundi au Vendredi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Heures Disponibles</label>
+                            <input type="text" id="entraineur-heures" class="form-control" placeholder="17h00 - 21h00" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card shadow-sm p-4">
+                    <h3 class="h5 mb-3 text-secondary">Liste des Entraîneurs Actuels</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover align-middle">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Spécialité</th>
+                                    <th>Jours</th>
+                                    <th>Heures</th>
+                                </tr>
+                            </thead>
+                            <tbody id="liste-entraineurs"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/entraineurs.js"></script>
+</body>
+</html>
