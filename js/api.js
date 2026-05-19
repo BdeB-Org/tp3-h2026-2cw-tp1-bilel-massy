@@ -22,3 +22,19 @@ async function getById(endpoint, id) {
         return null;
     }
 }
+
+async function create(endpoint, objetData) {
+    try {
+        const response = await fetch(`${BASE_URL}${endpoint}/`, {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objetData)
+        });
+        return response.ok || response.status === 201 || response.status === 200;
+    } catch (error) {
+        console.error(error);
+        return false;
+    }
+}
