@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     chargerCalendrier();
+    document.getElementById('form-ajouter-entrainement')?.addEventListener('submit', ajouterNouveauCreneau);
 });
 
 async function chargerCalendrier() {
