@@ -8,3 +8,23 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🏋️ Gym Management System</a>
+            <div class="d-flex">
+                <a href="membres.html" class="btn btn-outline-light btn-sm me-2">Membres</a>
+                <a href="entraineurs.html" class="btn btn-outline-light btn-sm me-2">Entraîneurs</a>
+                <a href="calendrier.html" class="btn btn-primary btn-sm">Calendrier</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <div class="card shadow p-4 bg-white rounded-3">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="text-primary font-weight-bold h3 mb-1">📅 Horaires & Disponibilités</h1>
+                    <p class="text-muted mb-0">Vue d'ensemble des jours occupés par les entraîneurs et des créneaux libres.</p>
+                </div>
+                <span class="badge bg-secondary p-2" id="current-week">Semaine de Travail</span>
+            </div>
