@@ -56,3 +56,13 @@ function afficherCalendrier(entrainements) {
         grille.appendChild(col);
     });
 }
+async function supprimerEntrainement(id) {
+    if(confirm("Êtes-vous certain de vouloir annuler cet entraînement ?")) {
+        try {
+            await remove('entrainements', id);
+            chargerCalendrier(); 
+        } catch (error) {
+            console.error("Erreur lors de la suppression:", error);
+        }
+    }
+}
