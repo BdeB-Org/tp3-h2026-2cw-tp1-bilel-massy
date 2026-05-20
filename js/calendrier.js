@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
 async function chargerCalendrier() {
     try {
         const data = await getAll('entrainements'); 
-        afficherCalendrier(data.items); 
+        afficherCalendrier(data); 
     } catch (error) {
         console.error("Erreur lors du chargement des données du calendrier:", error);
     }
 }
+
 function afficherCalendrier(entrainements) {
     const grille = document.getElementById('calendrier-grille');
     grille.innerHTML = ''; 
