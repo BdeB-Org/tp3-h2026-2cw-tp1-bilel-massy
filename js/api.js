@@ -1,5 +1,4 @@
-const BASE_URL = "http://localhost:8080/ords/commande/";
-
+const BASE_URL = "http://localhost:8080/ords/gym/";
 async function getAll(endpoint) {
     try {
         const response = await fetch(`${BASE_URL}${endpoint}/`);
