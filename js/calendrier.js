@@ -10,7 +10,6 @@ async function chargerCalendrier() {
         console.error("Erreur lors du chargement des données du calendrier:", error);
     }
 }
-
 function afficherCalendrier(entrainements) {
     const grille = document.getElementById('calendrier-grille');
     grille.innerHTML = ''; 
@@ -65,5 +64,28 @@ async function supprimerEntrainement(id) {
         } catch (error) {
             console.error("Erreur lors de la suppression:", error);
         }
+    }
+}async function ajouterNouveauCreneau(event) {
+    event.preventDefault();
+
+    const nouvelEntrainement = {
+        id: parseInt(document.getElementById('entrainement-id').value),
+        jour: document.getElementById('entrainement-jour').value,
+        heure_debut: document.getElementById('entrainement-debut').value,
+        heure_fin: document.getElementById('entrainement-fin').value,
+        entraineur_id: parseInt(document.getElementById('entrainement-coach').value),
+        type_activite: document.getElementById('entrainement-activite').value
+    };
+
+    try {
+        const succes = await create('entrainements', nouvelEntrainement);
+        if (succes) {
+            document.getElementById('form-ajouter-entrainement').reset();
+            chargerCalendrier(); 
+        } else {
+            alert("Erreur lors de l'ajout de l'entraînement.");
+        }
+    } catch (error) {
+        console.error("Erreur lors de la création:", error);
     }
 }
